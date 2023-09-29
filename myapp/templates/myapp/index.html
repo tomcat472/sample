@@ -1,0 +1,15 @@
+{% extends "myapp/base.html" %}
+{% block title %}
+    {{fruit.name}}
+{% endblock title %}
+{% block content %}
+    <div class="container">
+        <ul>
+            {% for fruit in fruits %}
+                <a href="{{ fruit.get_absolute_url }}">
+                    <li>{{ fruit.name | title }} is {{ fruit.price }}</li>
+                </a>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock content %}

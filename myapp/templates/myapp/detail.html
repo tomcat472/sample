@@ -1,0 +1,17 @@
+{% extends "myapp/base.html" %}
+{% block title %}
+    Your Page Title
+{% endblock title %}
+{% block content %}
+    <div class="container">
+        <h1>{{ name | title}}</h1>
+        <p>
+            The value of {{ name | title }} is {{ price }}
+            {% if is_available %}
+                and it can be bought from my shop.
+            {% else %}
+                but {{ name | title }} is not available right now.
+            {% endif %}
+        </p>
+    </div>
+{% endblock content %}
